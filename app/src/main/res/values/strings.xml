@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Technical-Fest</string>
+    <string name="title_activity_home">MainActivity</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_attractions">Attractions</string>
+    <string name="title_events">Events</string>
+    <string name="title_profile">Profile</string>
 </resources>
