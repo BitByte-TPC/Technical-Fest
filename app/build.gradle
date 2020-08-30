@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'com.google.firebase.firebase-perf'
 
 android {
     compileSdkVersion 29
@@ -31,4 +34,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     implementation 'com.google.android.material:material:1.2.0'
+    implementation 'com.google.firebase:firebase-analytics:17.5.0'
+    implementation 'com.google.firebase:firebase-crashlytics:17.2.1'
+    implementation 'com.google.firebase:firebase-perf:19.0.8'
 }
