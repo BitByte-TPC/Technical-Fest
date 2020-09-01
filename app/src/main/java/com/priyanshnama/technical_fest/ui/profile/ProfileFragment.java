@@ -1,6 +1,7 @@
 package com.priyanshnama.technical_fest.ui.profile;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.priyanshnama.technical_fest.R;
@@ -63,7 +65,7 @@ public class ProfileFragment extends Fragment {
         profileViewModel.getFestId().observe(getViewLifecycleOwner(), s -> festId.setText(s));
         profileViewModel.getPass().observe(getViewLifecycleOwner(), integer -> passView.setText(String.valueOf(integer)));
         profileViewModel.getPhotoUrl().observe(getViewLifecycleOwner(),
-                uri -> Picasso.get().load(profileViewModel.getPhotoUrl().toString()).into(profilePic));
+                uri -> Picasso.get().load(uri.toString()).into(profilePic));
     }
 
 }
