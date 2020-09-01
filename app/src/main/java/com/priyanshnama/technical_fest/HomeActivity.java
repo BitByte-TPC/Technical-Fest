@@ -25,20 +25,10 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView sideNavigationView = findViewById(R.id.side_nav_view);
-        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.contact)
-                .setDrawerLayout(drawer)
-                .build();
-        NavController sideNavController = Navigation.findNavController(this, R.id.side_nav_host_fragment);
-        NavigationUI.setupWithNavController(sideNavigationView, sideNavController);
-
-
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav_view);
         NavController bottomNavController = Navigation.findNavController(this, R.id.bottom_nav_host_fragment);
         NavigationUI.setupWithNavController(bottomNavigationView, bottomNavController);
 
-        findViewById(R.id.navigate).setOnClickListener(this::navigation);
     }
 
     /*
@@ -51,19 +41,4 @@ public class HomeActivity extends AppCompatActivity {
             .build();
     NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
     */
-
-
-    private void navigation(View view) {
-        NavController sideNavController = Navigation.findNavController(this, R.id.side_nav_host_fragment);
-        if (!NavigationUI.navigateUp(sideNavController, mAppBarConfiguration)) {
-            super.onSupportNavigateUp();
-        }
-    }
-
-    public static class NullFragment extends Fragment {
-
-        public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            return null;
-        }
-    }
 }
