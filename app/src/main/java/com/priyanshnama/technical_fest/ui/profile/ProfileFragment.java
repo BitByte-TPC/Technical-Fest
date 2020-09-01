@@ -1,6 +1,8 @@
 package com.priyanshnama.technical_fest.ui.profile;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,6 +21,8 @@ import androidx.lifecycle.ViewModelProviders;
 import com.priyanshnama.technical_fest.R;
 import com.priyanshnama.technical_fest.UpgradePassActivity;
 import com.squareup.picasso.Picasso;
+
+import java.util.Objects;
 
 public class ProfileFragment extends Fragment {
 
@@ -56,10 +60,23 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        setData();
+        setLocalData();
+        setNewData();
     }
 
-    private void setData() {
+    private void setLocalData() {
+        SharedPreferences userInfo =  this.requireActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = userInfo.edit();
+        editor.apply();
+
+        name.setText(userInfo.getString("name","Name"));
+        email.setText(userInfo.getString("email","Email"));
+        //passView.setText(userInfo.getInt("pass",0));
+        festId.setText(userInfo.getString("festId","festId"));
+        Picasso.get().load(userInfo.getString("photoUrl","null")).into(profilePic);
+    }
+
+    private void setNewData() {
         profileViewModel.getName().observe(getViewLifecycleOwner(), s -> name.setText(s));
         profileViewModel.getEmail().observe(getViewLifecycleOwner(), s -> email.setText(s));
         profileViewModel.getFestId().observe(getViewLifecycleOwner(), s -> festId.setText(s));
