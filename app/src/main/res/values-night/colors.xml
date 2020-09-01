@@ -4,4 +4,13 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="black">#FFFFFFFF</color>
+
+    <color name="gold">#FFBCA112</color>
+    <color name="lightGold">#CCBCA112</color>
+
+    <color name="silver">#FFC0C0C0</color>
+    <color name="lightSilver">#CCC0C0C0</color>
+
+    <color name="bronze">#FFCD7F32</color>
+    <color name="lightBronze">#CCCD7F32</color>
 </resources>
