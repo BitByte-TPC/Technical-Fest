@@ -2,7 +2,9 @@ package com.priyanshnama.technical_fest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -79,16 +81,32 @@ public class MainActivity extends AppCompatActivity {
         open_home();
     }
 
+    private void saveLocalData(String festId, FirebaseUser account) {
+        SharedPreferences userInfo =  getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = userInfo.edit();
+        editor.apply();
+
+        editor.putString("name",account.getDisplayName());
+        editor.putString("email",account.getEmail());
+        editor.putString("uid",account.getUid());
+        editor.putString("festId",festId);
+        editor.putString("photoUrl", String.valueOf(account.getPhotoUrl()));
+        editor.putInt("pass",0);
+        editor.commit();
+    }
+
     private void createData(FirebaseUser account) {
+        String festId = getfestId(account);
         Map<String, Object> data = new HashMap<>();
         data.put("email", account.getEmail());
         data.put("name", account.getDisplayName());
-        data.put("festId",getfestId(account));
+        data.put("festId",festId);
         data.put("pass",0);
         FirebaseFirestore.getInstance().collection("users")
                 .document(account.getUid())
                 .set(data)
                 .addOnSuccessListener(documentReference -> Toast.makeText(this,"Account Created",Toast.LENGTH_LONG).show());
+        saveLocalData(festId, account);
     }
 
     private String getfestId(FirebaseUser account) {
