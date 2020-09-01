@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
-    <color name="black">#FFFFFFFF</color>
+<!--    <color name="colorPrimaryDark">@color/white</color>-->
+    <color name="colorAccent">@color/white</color>
 
-    <color name="gold">#FFBCA112</color>
-    <color name="lightGold">#CCBCA112</color>
+    <color name="black">#FFFFFFFF</color>
+    <color name="white">#FF000000</color>
+
+    <color name="darkGold">#FFFFDC73</color>
+    <color name="Gold">#FFFFBF00</color>
+    <color name="lightGold">#A67C00</color>
 
     <color name="silver">#FFC0C0C0</color>
     <color name="lightSilver">#CCC0C0C0</color>
 
     <color name="bronze">#FFCD7F32</color>
     <color name="lightBronze">#CCCD7F32</color>
+
+    <color name="orange">#e6820b</color>
 </resources>
