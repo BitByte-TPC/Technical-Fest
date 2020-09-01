@@ -23,7 +23,7 @@
         android:layout_margin="32dp"
         android:text="Name"
         android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/profile_image"
         app:layout_constraintStart_toStartOf="@+id/profile_image"
         app:layout_constraintTop_toBottomOf="@+id/profile_image" />
@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
         android:text="Email"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/profile_name"
         app:layout_constraintStart_toStartOf="@+id/profile_name"
         app:layout_constraintTop_toBottomOf="@+id/profile_name" />
@@ -44,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
         android:text="UID"
-        android:textColor="#000000"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/profile_email"
         app:layout_constraintStart_toStartOf="@+id/profile_email"
         app:layout_constraintTop_toBottomOf="@+id/profile_email" />
@@ -64,6 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
+        android:textColor="@color/black"
         android:text="pass"
         app:layout_constraintEnd_toEndOf="@+id/upgrade"
         app:layout_constraintStart_toStartOf="@+id/upgrade"
