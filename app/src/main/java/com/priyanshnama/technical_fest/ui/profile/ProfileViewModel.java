@@ -1,5 +1,6 @@
 package com.priyanshnama.technical_fest.ui.profile;
 
+import android.content.SharedPreferences;
 import android.net.Uri;
 
 import androidx.lifecycle.MutableLiveData;
@@ -17,6 +18,7 @@ public class ProfileViewModel extends ViewModel {
     private MutableLiveData<String> name, email, festId;
     private MutableLiveData<Integer> pass;
     private MutableLiveData<Uri> photoUrl;
+    private SharedPreferences userInfo;
 
     public ProfileViewModel() {
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -25,7 +27,24 @@ public class ProfileViewModel extends ViewModel {
         festId = new MutableLiveData<>();
         pass = new MutableLiveData<>();
         photoUrl = new MutableLiveData<>();
+        try {
+            setLocalData();
+        }catch (Exception ignored){}
         getData();
+        try {
+            updateLocal();
+        }catch (Exception ignored){}
+    }
+
+    private void setLocalData() {
+        SharedPreferences.Editor editor = userInfo.edit();
+        editor.apply();
+
+        name.setValue(userInfo.getString("name","Name"));
+        email.setValue(userInfo.getString("email","Email"));
+        pass.setValue(userInfo.getInt("pass",0));
+        festId.setValue(userInfo.getString("festId","festId"));
+        photoUrl.setValue(Uri.parse(userInfo.getString("photoUrl","null")));
     }
 
     public void getData() {
@@ -43,6 +62,18 @@ public class ProfileViewModel extends ViewModel {
                 });
     }
 
+    private void updateLocal() {
+        SharedPreferences.Editor editor = userInfo.edit();
+        editor.apply();
+
+        editor.putString("name", user.getDisplayName());
+        editor.putString("email",user.getEmail());
+        editor.putString("uid",user.getUid());
+        editor.putString("festId",festId.getValue());
+        editor.putInt("pass",pass.getValue());
+        editor.commit();
+    }
+
     public MutableLiveData<String> getName(){return name;}
 
     public MutableLiveData<String> getEmail() {return email;}
@@ -52,4 +83,8 @@ public class ProfileViewModel extends ViewModel {
     public MutableLiveData<Integer> getPass() {return pass;}
 
     public MutableLiveData<Uri> getPhotoUrl() {return photoUrl;}
+
+    public void sendPrefrence(SharedPreferences userInfo) {
+        this.userInfo = userInfo;
+    }
 }
