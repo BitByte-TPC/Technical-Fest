@@ -9,4 +9,9 @@
     <string name="the_tagline">The Tagline</string>
     <string name="title_contact_us">Contact Us</string>
     <string name="txt_upgrade_pass">Upgrade Pass</string>
+    <string name="txt_log_out">Log Out</string>
+    <string name="sample_name">Priyansh Nama</string>
+    <string name="sample_email">priyanshnama@gmail.com</string>
+    <string name="sample_festId">PN6756675654</string>
+    <string name="sample_pass">0</string>
 </resources>

@@ -22,6 +22,7 @@
             android:layout_width="@dimen/profile_photo_size"
             android:layout_height="@dimen/profile_photo_size"
             android:layout_gravity="center"
+            android:src="@drawable/ic_profile_user"
             android:layout_marginTop="25dp"
             app:civ_border_color="@color/black"
             app:civ_border_width="2dp" />
@@ -31,49 +32,57 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:text="@string/sample_name"
             android:fontFamily="@font/kaushan_script"
-            android:layout_marginBottom="20dp"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="32sp" />
 
+        <TextView
+            android:id="@+id/profile_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/sample_email"
+            android:textAlignment="center"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/uid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/sample_festId"
+            android:layout_margin="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"/>
+
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/profile_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <TextView
-        android:id="@+id/uid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_email" />
 
     <TextView
         android:id="@+id/pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
+        android:text="@string/sample_pass"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/uid" />
+        app:layout_constraintTop_toBottomOf="@+id/signOut" />
 
     <Button
         android:id="@+id/upgrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_dark"
         android:text="@string/txt_upgrade_pass"
-        app:layout_constraintBottom_toBottomOf="@+id/uid"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/profile_email" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/signOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_log_out"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/upgrade" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

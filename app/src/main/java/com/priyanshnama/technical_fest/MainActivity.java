@@ -39,11 +39,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mAuth = FirebaseAuth.getInstance();
         if (mAuth.getCurrentUser() != null) open_home();
-        else signIn();
+        setContentView(R.layout.activity_main);
+        findViewById(R.id.sign_in_button).setOnClickListener(v -> signIn());
     }
 
     private void signIn() {
-        setContentView(R.layout.activity_main);
+        findViewById(R.id.sign_in_button).setVisibility(View.INVISIBLE);
         findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))

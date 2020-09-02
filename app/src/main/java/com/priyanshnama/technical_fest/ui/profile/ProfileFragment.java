@@ -15,6 +15,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.firebase.auth.FirebaseAuth;
+import com.priyanshnama.technical_fest.MainActivity;
 import com.priyanshnama.technical_fest.R;
 import com.priyanshnama.technical_fest.UpgradePassActivity;
 import com.squareup.picasso.Picasso;
@@ -26,7 +33,6 @@ public class ProfileFragment extends Fragment {
     private ProfileViewModel profileViewModel;
     private TextView name, email, festId, passView;
     private ImageView profilePic;
-    private Button upgrade;
     private Integer pass;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,19 +44,22 @@ public class ProfileFragment extends Fragment {
         festId = root.findViewById(R.id.uid);
         profilePic = root.findViewById(R.id.profile_image);
         passView = root.findViewById(R.id.pass);
-        upgrade = root.findViewById(R.id.upgrade);
-        upgrade.setOnClickListener(this::upgrade);
+
+        Button upgrade = root.findViewById(R.id.upgrade);
+        upgrade.setOnClickListener(v -> startActivity(new Intent(getContext(), UpgradePassActivity.class)));
+
+        Button signOut = root.findViewById(R.id.signOut);
+        signOut.setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+            Auth.GoogleSignInApi.signOut(new GoogleApiClient.Builder(requireContext()).build());
+            startActivity(new Intent(getContext(), MainActivity.class));
+        });
+
         SharedPreferences userInfo =  this.requireActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         profileViewModel.sendPrefrence(userInfo);
         setData();
         return root;
     }
-
-
-    private void upgrade(View view) {
-        startActivity(new Intent(getContext(), UpgradePassActivity.class));
-    }
-
 
     private void setData() {
         profileViewModel.getName().observe(getViewLifecycleOwner(), s -> name.setText(s));
