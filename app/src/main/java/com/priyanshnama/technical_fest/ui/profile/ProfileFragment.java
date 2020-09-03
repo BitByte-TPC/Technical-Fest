@@ -44,13 +44,7 @@ public class ProfileFragment extends Fragment {
         upgrade.setOnClickListener(v -> startActivity(new Intent(getContext(), UpgradePassActivity.class)));
 
         Button signOut = root.findViewById(R.id.signOut);
-        signOut.setOnClickListener(v -> {
-            FirebaseAuth.getInstance().signOut();
-            GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                    .requestEmail()
-                    .build();
-            GoogleSignIn.getClient(requireContext(), gso).signOut().addOnCompleteListener(task -> startActivity(new Intent(getContext(), MainActivity.class)));
-        });
+        signOut.setOnClickListener(this::signOut);
 
         SharedPreferences userInfo =  this.requireActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         profileViewModel.sendPrefrence(userInfo);
@@ -65,6 +59,17 @@ public class ProfileFragment extends Fragment {
         profileViewModel.getPass().observe(getViewLifecycleOwner(), integer -> passView.setText(String.valueOf(integer)));
         profileViewModel.getPhotoUrl().observe(getViewLifecycleOwner(),
                 uri -> Picasso.get().load(uri.toString()).into(profilePic));
+    }
+
+    public void signOut(View view){
+        FirebaseAuth.getInstance().signOut();
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        GoogleSignIn.getClient(requireContext(), gso).signOut().addOnCompleteListener(task -> {
+            startActivity(new Intent(getContext(), MainActivity.class));
+            requireActivity().finish();
+        });
     }
 
 }
