@@ -14,4 +14,27 @@
     <string name="sample_email">priyanshnama@gmail.com</string>
     <string name="sample_festId">PN6756675654</string>
     <string name="sample_pass">0</string>
+
+
+    <string name="aps">Astronomy</string>
+    <string name="coding">Programming</string>
+    <string name="photo">Photography</string>
+    <string name="bmc">Business Management</string>
+    <string name="electronics">Electronics</string>
+    <string name="racing">Racing</string>
+    <string name="robotics">Robotics</string>
+    <string name="afc">Automotive and Fabrication</string>
+    <string name="cad">CAD and 3D Printing</string>
+
+    <string-array name="clubs">
+        <item>Astronomy</item>
+        <item>Photography</item>
+        <item>Business Management</item>
+        <item>Programming</item>
+        <item>Electronics</item>
+        <item>Racing</item>
+        <item>Robotics</item>
+        <item>Automotive and Fabrication</item>
+        <item>CAD and 3D Printing</item>
+    </string-array>
 </resources>

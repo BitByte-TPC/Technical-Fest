@@ -18,18 +18,12 @@ public class EventsFragment extends Fragment {
 
     private EventsViewModel eventsViewModel;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         eventsViewModel =
                 ViewModelProviders.of(this).get(EventsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_events, container, false);
-        final TextView textView = root.findViewById(R.id.text_events);
-        eventsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        final TextView textView = root.findViewById(R.id.title);
+        eventsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 }
