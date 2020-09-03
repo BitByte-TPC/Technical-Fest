@@ -16,12 +16,17 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        if(FirebaseAuth.getInstance().getCurrentUser()==null) finish();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav_view);
         NavController bottomNavController = Navigation.findNavController(this, R.id.bottom_nav_host_fragment);
         NavigationUI.setupWithNavController(bottomNavigationView, bottomNavController);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(FirebaseAuth.getInstance().getCurrentUser()==null) finish();
     }
 
     /*

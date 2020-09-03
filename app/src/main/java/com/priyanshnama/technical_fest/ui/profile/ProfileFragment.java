@@ -15,18 +15,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.auth.FirebaseAuth;
 import com.priyanshnama.technical_fest.MainActivity;
 import com.priyanshnama.technical_fest.R;
 import com.priyanshnama.technical_fest.UpgradePassActivity;
 import com.squareup.picasso.Picasso;
-
-import java.util.Objects;
 
 public class ProfileFragment extends Fragment {
 
@@ -51,8 +46,10 @@ public class ProfileFragment extends Fragment {
         Button signOut = root.findViewById(R.id.signOut);
         signOut.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
-            Auth.GoogleSignInApi.signOut(new GoogleApiClient.Builder(requireContext()).build());
-            startActivity(new Intent(getContext(), MainActivity.class));
+            GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                    .requestEmail()
+                    .build();
+            GoogleSignIn.getClient(requireContext(), gso).signOut().addOnCompleteListener(task -> startActivity(new Intent(getContext(), MainActivity.class)));
         });
 
         SharedPreferences userInfo =  this.requireActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
