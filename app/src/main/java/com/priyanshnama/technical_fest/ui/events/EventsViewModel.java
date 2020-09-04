@@ -3,6 +3,7 @@ package com.priyanshnama.technical_fest.ui.events;
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
@@ -42,7 +43,7 @@ public class EventsViewModel extends ViewModel {
         this.isClubSelected = b;
     }
 
-    public void listEvents(Context context, String title, RecyclerView recyclerView) {
+    public void listEvents(Context context, String title, RecyclerView recyclerView, ProgressBar progressCircular) {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         if (firebaseDatabase == null) {
             firebaseDatabase = FirebaseDatabase.getInstance();
@@ -61,8 +62,9 @@ public class EventsViewModel extends ViewModel {
                     assert event != null;
                     list.add(event);
                 }
-                EventAdapter adapter = new EventAdapter(context,list);
-                recyclerView.setAdapter(adapter);
+                recyclerView.setAdapter(new EventAdapter(context,list));
+                recyclerView.setVisibility(View.VISIBLE);
+                progressCircular.setVisibility(View.INVISIBLE);
             }
 
             @Override

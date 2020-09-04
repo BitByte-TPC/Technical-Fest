@@ -22,7 +22,7 @@ public class EventsFragment extends Fragment implements IOnBackPressed {
     private EventsViewModel eventsViewModel;
     private Boolean isClubSelected;
     private TextView title, clubName;
-    private ProgressBar progressCircular;
+    public ProgressBar progressCircular;
     private ImageView back;
     private RecyclerView recyclerView;
     private View events, club;
@@ -71,8 +71,6 @@ public class EventsFragment extends Fragment implements IOnBackPressed {
         if(isClubSelected){
             events.setVisibility(View.INVISIBLE);
             club.setVisibility(View.VISIBLE);
-            clubName.setVisibility(View.VISIBLE);
-            back.setVisibility(View.VISIBLE);
         }
     }
 
@@ -83,11 +81,8 @@ public class EventsFragment extends Fragment implements IOnBackPressed {
         clubName.setText(txt_clubName);
         events.setVisibility(View.INVISIBLE);
         club.setVisibility(View.VISIBLE);
-        clubName.setVisibility(View.VISIBLE);
-        back.setVisibility(View.VISIBLE);
         progressCircular.setVisibility(View.VISIBLE);
-        eventsViewModel.listEvents(requireContext(), clubName.getText().toString(), recyclerView);
-        progressCircular.setVisibility(View.INVISIBLE);
+        eventsViewModel.listEvents(requireContext(), clubName.getText().toString(), recyclerView, progressCircular);
     }
 
     @Override
@@ -102,10 +97,9 @@ public class EventsFragment extends Fragment implements IOnBackPressed {
 
     private void revertToEvents(View view) {
         isClubSelected = false;
+        recyclerView.setVisibility(View.INVISIBLE);
         events.setVisibility(View.VISIBLE);
         club.setVisibility(View.INVISIBLE);
-        clubName.setVisibility(View.INVISIBLE);
-        back.setVisibility(View.INVISIBLE);
         eventsViewModel.getText().observe(getViewLifecycleOwner(), title::setText);
     }
 }

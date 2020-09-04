@@ -39,7 +39,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventsViewHo
         String[] event_data = new String[3];
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, EventInfoActivity.class)
-                    .putExtra("event_data",event_data);
+                    .putExtra("event_data",event_data).putExtra("event_name",holder.name.getText().toString());
             context.startActivity(intent);
         });
         holder.name.setText(event.get(position).getName());
