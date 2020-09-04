@@ -19,35 +19,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/club_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/card_margin"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeMinTextSize="18sp"
+        android:autoSizeStepGranularity="6sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/kaushan_script"
+        android:gravity="center"
+        android:text="@string/afc"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/back"
+        app:layout_constraintTop_toTopOf="@+id/back" />
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_margin="@dimen/card_margin"
+        android:src="@drawable/ic_left_arrow"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
         android:id="@+id/club"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="invisible">
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/back"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_margin="12dp"/>
 
-            <TextView
-                android:id="@+id/club_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/kaushan_script"
-                android:gravity="center"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="60sp" />
-
-        </LinearLayout>
     </ScrollView>
 
     <ScrollView
         android:id="@+id/events"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,9 +85,9 @@
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:fontFamily="@font/kaushan_script"
                 android:gravity="center"
-                android:layout_gravity="center"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="60sp" />
@@ -77,11 +98,11 @@
                 android:layout_margin="@dimen/card_margin"
                 android:padding="6dp">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/racing"
                     android:layout_margin="12dp"
+                    android:contentDescription="@string/racing"
                     android:src="@drawable/racing" />
 
                 <TextView
@@ -100,11 +121,11 @@
                 android:layout_margin="@dimen/card_margin"
                 android:padding="6dp">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/aps"
                     android:layout_margin="12dp"
+                    android:contentDescription="@string/aps"
                     android:src="@drawable/aps" />
 
                 <TextView
@@ -123,11 +144,11 @@
                 android:layout_margin="@dimen/card_margin"
                 android:padding="6dp">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/coding"
                     android:layout_margin="12dp"
+                    android:contentDescription="@string/coding"
                     android:src="@drawable/programming" />
 
                 <TextView
@@ -146,11 +167,11 @@
                 android:layout_margin="@dimen/card_margin"
                 android:padding="6dp">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/cad"
                     android:layout_margin="12dp"
+                    android:contentDescription="@string/cad"
                     android:src="@drawable/cad" />
 
                 <TextView
@@ -169,11 +190,11 @@
                 android:layout_margin="@dimen/card_margin"
                 android:padding="6dp">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/afc"
                     android:layout_margin="12dp"
+                    android:contentDescription="@string/afc"
                     android:src="@drawable/afc" />
 
                 <TextView
@@ -192,11 +213,11 @@
                 android:layout_margin="@dimen/card_margin"
                 android:padding="6dp">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/photo"
                     android:layout_margin="12dp"
+                    android:contentDescription="@string/photo"
                     android:src="@drawable/photo" />
 
                 <TextView
@@ -215,11 +236,11 @@
                 android:layout_margin="@dimen/card_margin"
                 android:padding="6dp">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/electronics"
                     android:layout_margin="12dp"
+                    android:contentDescription="@string/electronics"
                     android:src="@drawable/electronics" />
 
                 <TextView
@@ -238,11 +259,11 @@
                 android:layout_margin="@dimen/card_margin"
                 android:padding="6dp">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/bmc"
                     android:layout_margin="12dp"
+                    android:contentDescription="@string/bmc"
                     android:src="@drawable/bmc" />
 
                 <TextView
@@ -264,8 +285,8 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/robotics"
                     android:layout_margin="12dp"
+                    android:contentDescription="@string/robotics"
                     android:src="@drawable/robotics" />
 
                 <TextView

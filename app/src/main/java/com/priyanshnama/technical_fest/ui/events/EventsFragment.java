@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,8 +18,8 @@ import com.priyanshnama.technical_fest.R;
 public class EventsFragment extends Fragment implements IOnBackPressed {
     private EventsViewModel eventsViewModel;
     private Boolean isClubSelected;
-    private TextView title;
-    private TextView clubName;
+    private TextView title, clubName;
+    private ImageView back;
     private View events, club;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class EventsFragment extends Fragment implements IOnBackPressed {
         events = root.findViewById(R.id.events);
         clubName = root.findViewById(R.id.club_name);
         club = root.findViewById(R.id.club);
+        back = root.findViewById(R.id.back);
 
         root.findViewById(R.id.racing).setOnClickListener(this::expand);
         root.findViewById(R.id.aps).setOnClickListener(this::expand);
@@ -40,6 +43,7 @@ public class EventsFragment extends Fragment implements IOnBackPressed {
         root.findViewById(R.id.robotics).setOnClickListener(this::expand);
 
         loadState();
+        back.setOnClickListener(this::revertToEvents);
 
         eventsViewModel.getText().observe(getViewLifecycleOwner(), title::setText);
         return root;
@@ -60,22 +64,26 @@ public class EventsFragment extends Fragment implements IOnBackPressed {
         clubName.setText(txt_clubName);
         events.setVisibility(View.INVISIBLE);
         club.setVisibility(View.VISIBLE);
+        clubName.setVisibility(View.VISIBLE);
+        back.setVisibility(View.VISIBLE);
     }
 
     @Override
     public boolean onBackPressed() {
         if (isClubSelected) {
-            revertToEvents();
+            revertToEvents(null);
             return true;
         } else {
             return false;
         }
     }
 
-    private void revertToEvents() {
+    private void revertToEvents(View view) {
         isClubSelected = false;
         events.setVisibility(View.VISIBLE);
         club.setVisibility(View.INVISIBLE);
+        clubName.setVisibility(View.INVISIBLE);
+        back.setVisibility(View.INVISIBLE);
         eventsViewModel.getText().observe(getViewLifecycleOwner(), title::setText);
     }
 }
