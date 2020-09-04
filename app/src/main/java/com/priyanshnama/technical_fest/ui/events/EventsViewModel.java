@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel;
 public class EventsViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
+    private Boolean isClubSelected = false;
 
     public EventsViewModel() {
         mText = new MutableLiveData<>();
@@ -15,5 +16,13 @@ public class EventsViewModel extends ViewModel {
 
     public LiveData<String> getText() {
         return mText;
+    }
+
+    public Boolean isClubSelected() {
+        return isClubSelected;
+    }
+
+    public void setClubSelected(boolean b) {
+        this.isClubSelected = b;
     }
 }

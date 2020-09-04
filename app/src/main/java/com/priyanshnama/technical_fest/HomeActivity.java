@@ -1,6 +1,9 @@
 package com.priyanshnama.technical_fest;
 
+import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -21,6 +24,8 @@ public class HomeActivity extends AppCompatActivity {
         NavController bottomNavController = Navigation.findNavController(this, R.id.bottom_nav_host_fragment);
         NavigationUI.setupWithNavController(bottomNavigationView, bottomNavController);
 
+        Log.d("TAG", String.valueOf(getSupportFragmentManager().getBackStackEntryCount()));
+
     }
 
     @Override
@@ -39,4 +44,11 @@ public class HomeActivity extends AppCompatActivity {
             .build();
     NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
     */
+
+@Override public void onBackPressed() {
+    Fragment fragment = getFragmentManager().findFragmentById(R.id.navigation_events);
+    if (!(fragment instanceof IOnBackPressed) || !((IOnBackPressed) fragment).onBackPressed()) {
+        super.onBackPressed();
+    }
+    }
 }
