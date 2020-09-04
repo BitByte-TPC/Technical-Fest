@@ -25,6 +25,11 @@
     <string name="robotics">Robotics</string>
     <string name="afc">Automotive and Fabrication</string>
     <string name="cad">CAD and 3D Printing</string>
+    <string name="participate">Participate</string>
+    <string name="back">back</string>
+    <string name="event_poster">Event Poster</string>
+    <string name="email">email</string>
+    <string name="call">call</string>
 
     <string-array name="clubs">
         <item>Astronomy</item>
