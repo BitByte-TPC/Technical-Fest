@@ -1,4 +1,22 @@
-# Technical-Fest
+<h1 align = center>Technical-Fest</h1>
+
+<p align="center">
+<a href="https://github.com/IIITDMJ-OPEN-SOURCE/Technical-Fest/blob/master/LICENSE.txt" target="blank">
+<img src="https://img.shields.io/github/license/IIITDMJ-OPEN-SOURCE/Technical-Fest?style=flat-square" alt="Technical-Fest licence" />
+</a>
+<a href="https://github.com/IIITDMJ-OPEN-SOURCE/Technical-Fest/fork" target="blank">
+<img src="https://img.shields.io/github/forks/IIITDMJ-OPEN-SOURCE/Technical-Fest?style=flat-square" alt="github-profile-readme-generator forks"/>
+</a>
+<a href="https://github.com/IIITDMJ-OPEN-SOURCE/Technical-Fest/stargazers" target="blank">
+<img src="https://img.shields.io/github/stars/IIITDMJ-OPEN-SOURCE/Technical-Fest?style=flat-square" alt="github-profile-readme-generator stars"/>
+</a>
+<a href="https://github.com/IIITDMJ-OPEN-SOURCE/Technical-Fest/issues" target="blank">
+<img src="https://img.shields.io/github/issues/IIITDMJ-OPEN-SOURCE/Technical-Fest?style=flat-square" alt="github-profile-readme-generator issues"/>
+</a>
+<a href="https://github.com/IIITDMJ-OPEN-SOURCE/Technical-Fest/pulls" target="blank">
+<img src="https://img.shields.io/github/issues-pr/IIITDMJ-OPEN-SOURCE/Technical-Fest?style=flat-square" alt="github-profile-readme-generator pull-requests"/>
+</a>
+</p>
 
 This is a Android Application to be used during Technical Fests in college to facilate it's fucntioning.
 
