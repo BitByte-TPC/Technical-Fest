@@ -5,16 +5,16 @@
 <img src="https://img.shields.io/github/license/IIITDMJ-OPEN-SOURCE/Technical-Fest?style=flat-square" alt="Technical-Fest licence" />
 </a>
 <a href="https://github.com/IIITDMJ-OPEN-SOURCE/Technical-Fest/fork" target="blank">
-<img src="https://img.shields.io/github/forks/IIITDMJ-OPEN-SOURCE/Technical-Fest?style=flat-square" alt="github-profile-readme-generator forks"/>
+<img src="https://img.shields.io/github/forks/IIITDMJ-OPEN-SOURCE/Technical-Fest?style=flat-square" alt="Technical-Fest forks"/>
 </a>
 <a href="https://github.com/IIITDMJ-OPEN-SOURCE/Technical-Fest/stargazers" target="blank">
-<img src="https://img.shields.io/github/stars/IIITDMJ-OPEN-SOURCE/Technical-Fest?style=flat-square" alt="github-profile-readme-generator stars"/>
+<img src="https://img.shields.io/github/stars/IIITDMJ-OPEN-SOURCE/Technical-Fest?style=flat-square" alt="Technical-Fest stars"/>
 </a>
 <a href="https://github.com/IIITDMJ-OPEN-SOURCE/Technical-Fest/issues" target="blank">
-<img src="https://img.shields.io/github/issues/IIITDMJ-OPEN-SOURCE/Technical-Fest?style=flat-square" alt="github-profile-readme-generator issues"/>
+<img src="https://img.shields.io/github/issues/IIITDMJ-OPEN-SOURCE/Technical-Fest?style=flat-square" alt="Technical-Fest issues"/>
 </a>
 <a href="https://github.com/IIITDMJ-OPEN-SOURCE/Technical-Fest/pulls" target="blank">
-<img src="https://img.shields.io/github/issues-pr/IIITDMJ-OPEN-SOURCE/Technical-Fest?style=flat-square" alt="github-profile-readme-generator pull-requests"/>
+<img src="https://img.shields.io/github/issues-pr/IIITDMJ-OPEN-SOURCE/Technical-Fest?style=flat-square" alt="Technical-Fest pull-requests"/>
 </a>
 </p>
 
