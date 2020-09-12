@@ -39,6 +39,13 @@
     <string name="ca_portal">CA Portal</string>
     <string name="team_and_administration">Team and Administration</string>
     <string name="logout">Logout</string>
+    <string name="subject">Subject</string>
+    <string name="message">Message</string>
+    <string name="phone">Phone</string>
+    <string name="facebook_logo">Facebook Logo</string>
+    <string name="instagram_logo">Instagram Logo</string>
+    <string name="website_logo">Website Logo</string>
+    <string name="send">Send</string>
 
     <string-array name="clubs">
         <item>Astronomy</item>
