@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_horizontal_margin"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:padding="@dimen/text_padding"
+        android:text="@string/contact_us"
+        android:textColor="@color/black"
+        android:textSize="@dimen/info_text_size"/>
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:padding="@dimen/text_padding"
+        android:text="@string/about_the_fest"
+        android:textColor="@color/black"
+        android:textSize="@dimen/info_text_size"/>
+
+    <TextView
+        android:id="@+id/ca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:padding="@dimen/text_padding"
+        android:text="@string/ca_portal"
+        android:textColor="@color/black"
+        android:textSize="@dimen/info_text_size"/>
+
+    <TextView
+        android:id="@+id/team"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:padding="@dimen/text_padding"
+        android:text="@string/team_and_administration"
+        android:textColor="@color/black"
+        android:textSize="@dimen/info_text_size"/>
+
+    <TextView
+        android:id="@+id/signOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:padding="@dimen/text_padding"
+        android:text="@string/logout"
+        android:textColor="@color/black"
+        android:textSize="@dimen/info_text_size"/>
+
+</LinearLayout>

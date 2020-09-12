@@ -67,7 +67,8 @@
         android:text="@string/sample_pass"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signOut" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
         android:id="@+id/upgrade"
@@ -77,12 +78,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <Button
-        android:id="@+id/signOut"
+    <ImageView
+        android:id="@+id/options_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txt_log_out"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/upgrade" />
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:padding="@dimen/card_margin"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

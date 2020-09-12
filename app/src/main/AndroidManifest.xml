@@ -12,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ParticipateActivity"/>
+        <activity android:name=".ui.options.AboutActivity"></activity>
+        <activity android:name=".ui.options.TeamActivity" />
+        <activity android:name=".ui.options.CAPortalActivity" />
+        <activity android:name=".ui.options.ContactUsActivity" />
+        <activity android:name=".ParticipateActivity" />
         <activity android:name=".RulesActivity" />
         <activity android:name=".EventInfoActivity" />
         <activity android:name=".UpgradePassActivity" />

@@ -34,6 +34,11 @@
     <string name="calendar_icon">calendar_icon</string>
     <string name="clock_icon">clock_icon</string>
     <string name="location_marker">location_marker</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="about_the_fest">About The Fest</string>
+    <string name="ca_portal">CA Portal</string>
+    <string name="team_and_administration">Team and Administration</string>
+    <string name="logout">Logout</string>
 
     <string-array name="clubs">
         <item>Astronomy</item>
