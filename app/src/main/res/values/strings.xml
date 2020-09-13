@@ -15,6 +15,10 @@
     <string name="sample_festId">PN6756675654</string>
     <string name="sample_pass">0</string>
 
+<!--    social links  -->
+    <string name="facebook">https://facebook.com/iiitdmj.invicta</string>
+    <string name="instagram">https://instagram.com/invicta20_iiitdmj/</string>
+    <string name="website">https://invicta20.org/</string>
 
     <string name="aps">Astronomy</string>
     <string name="coding">Programming</string>

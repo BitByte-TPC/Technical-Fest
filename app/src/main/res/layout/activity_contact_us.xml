@@ -23,11 +23,13 @@
         android:id="@+id/image"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:contentDescription="@string/contact_us"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_contact_us"
-        android:contentDescription="@string/contact_us" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/contact_us" />
 
     <ImageView
         android:id="@+id/back"
@@ -45,8 +47,8 @@
         android:layout_height="wrap_content"
         android:text="@string/contact_us"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="40sp"
         android:textColor="@color/black"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -65,19 +67,6 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <EditText
-        android:id="@+id/message"
-        android:layout_width="0dp"
-        android:layout_height="171dp"
-        android:layout_margin="12dp"
-        android:hint="@string/message"
-        android:inputType="textMultiLine"
-        android:padding="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/send"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:autofillHints="Message" />
-
-    <EditText
         android:id="@+id/subject"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -90,23 +79,36 @@
         app:layout_constraintStart_toStartOf="parent"
         android:autofillHints="Subject" />
 
-    <Button
+    <EditText
+        android:id="@+id/message"
+        android:layout_width="0dp"
+        android:layout_height="170dp"
+        android:layout_margin="12dp"
+        android:autofillHints="Message"
+        android:hint="@string/message"
+        android:inputType="textMultiLine"
+        android:padding="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/send"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
         android:id="@+id/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_horizontal"
-        android:text="@string/send"
         android:layout_margin="12dp"
+        android:src="@drawable/ic_send"
+        android:background="@null"
         app:layout_constraintBottom_toTopOf="@+id/social"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/send" />
 
     <LinearLayout
         android:id="@+id/social"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        android:background="@null"
         android:orientation="horizontal"
         android:weightSum="3"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -118,7 +120,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="@null"
             android:padding="12dp"
             android:src="@drawable/ic_facebook"
             android:contentDescription="@string/facebook_logo" />
@@ -128,7 +130,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="@null"
             android:padding="12dp"
             android:src="@drawable/ic_instagram"
             android:contentDescription="@string/instagram_logo" />
@@ -138,7 +140,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="@null"
             android:padding="12dp"
             android:src="@drawable/ic_web"
             android:contentDescription="@string/website_logo" />
