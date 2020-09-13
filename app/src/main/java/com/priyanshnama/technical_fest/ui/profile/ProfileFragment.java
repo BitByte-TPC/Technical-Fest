@@ -21,7 +21,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.priyanshnama.technical_fest.MainActivity;
 import com.priyanshnama.technical_fest.R;
-import com.priyanshnama.technical_fest.UpgradePassActivity;
 import com.priyanshnama.technical_fest.ui.options.AboutActivity;
 import com.priyanshnama.technical_fest.ui.options.CAPortalActivity;
 import com.priyanshnama.technical_fest.ui.options.ContactUsActivity;

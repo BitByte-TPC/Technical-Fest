@@ -1,9 +1,11 @@
-package com.priyanshnama.technical_fest;
+package com.priyanshnama.technical_fest.ui.events;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.priyanshnama.technical_fest.R;
 
 import java.util.Objects;
 

@@ -16,10 +16,9 @@
         <activity android:name=".ui.options.TeamActivity" />
         <activity android:name=".ui.options.CAPortalActivity" />
         <activity android:name=".ui.options.ContactUsActivity" />
-        <activity android:name=".ParticipateActivity" />
-        <activity android:name=".RulesActivity" />
-        <activity android:name=".EventInfoActivity" />
-        <activity android:name=".UpgradePassActivity" />
+        <activity android:name=".ui.events.ParticipateActivity" />
+        <activity android:name=".ui.events.EventInfoActivity" />
+        <activity android:name=".ui.profile.UpgradePassActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

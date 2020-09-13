@@ -1,4 +1,4 @@
-package com.priyanshnama.technical_fest;
+package com.priyanshnama.technical_fest.ui.events;
 
 import android.Manifest;
 import android.content.Intent;
@@ -16,17 +16,19 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.priyanshnama.technical_fest.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.Map;
 import java.util.Objects;
 
 public class EventInfoActivity extends AppCompatActivity {
-    private TextView desc, prize, person, date, time, venue;
+    private TextView desc, prize, person, date, time, venue, rules;
     private ImageView image;
-    private String emailId, phone, event_name, rules;
+    private String emailId, phone, event_name;
     private View event_info;
     private ProgressBar progressBar;
+    private View rules_layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +46,11 @@ public class EventInfoActivity extends AppCompatActivity {
         date = findViewById(R.id.date);
         time = findViewById(R.id.time);
         venue = findViewById(R.id.venue);
+        rules = findViewById(R.id.rules);
+        rules_layout = findViewById(R.id.rules_layout);
 
-        findViewById(R.id.back).setOnClickListener(v -> finish());
-        findViewById(R.id.rules).setOnClickListener(this::showRules);
+        findViewById(R.id.back).setOnClickListener(this::back);
+        findViewById(R.id.show_rules).setOnClickListener(this::showRules);
         findViewById(R.id.participate).setOnClickListener(this::participate);
         findViewById(R.id.email).setOnClickListener(this::sendEmail);
         findViewById(R.id.call).setOnClickListener(this::call);
@@ -54,16 +58,24 @@ public class EventInfoActivity extends AppCompatActivity {
         getData(event_name);
     }
 
+    private void back(View view) {
+         if(rules_layout.getVisibility()==View.VISIBLE) {
+             event_info.setVisibility(View.VISIBLE);
+             rules_layout.setVisibility(View.INVISIBLE);
+         }
+         else
+             finish();
+    }
+
     private void participate(View view) {
-        Intent intent = new Intent(this,ParticipateActivity.class);
+        Intent intent = new Intent(this, ParticipateActivity.class);
         intent.putExtra("name",event_name);
         startActivity(intent);
     }
 
     private void showRules(View view) {
-        Intent intent = new Intent(this,RulesActivity.class);
-        intent.putExtra("rules",rules);
-        startActivity(intent);
+        event_info.setVisibility(View.INVISIBLE);
+        findViewById(R.id.rules_layout).setVisibility(View.VISIBLE);
     }
 
     private void call(View view) {
@@ -96,8 +108,8 @@ public class EventInfoActivity extends AppCompatActivity {
                         person.setText(Objects.requireNonNull(data.get("contact")).toString());
                         Picasso.get().load(Objects.requireNonNull(data.get("image")).toString()).into(image);
                         phone = Objects.requireNonNull(data.get("phone")).toString();
-                        rules = Objects.requireNonNull(data.get("rules")).toString();
                         emailId = Objects.requireNonNull(data.get("email")).toString();
+                        rules.setText(Objects.requireNonNull(data.get("rules")).toString());
                         desc.setText(Objects.requireNonNull(data.get("desc")).toString());
                         date.setText(Objects.requireNonNull(data.get("date")).toString());
                         time.setText(Objects.requireNonNull(data.get("time")).toString());

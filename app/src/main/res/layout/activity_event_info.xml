@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventInfoActivity">
+    tools:context=".ui.events.EventInfoActivity">
 
     <ImageView
         android:id="@+id/back"
@@ -46,6 +46,17 @@
     <include
         android:id="@+id/event_info"
         layout="@layout/event_info"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/g10" />
+
+    <include
+        android:id="@+id/rules_layout"
+        layout="@layout/rules_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="invisible"

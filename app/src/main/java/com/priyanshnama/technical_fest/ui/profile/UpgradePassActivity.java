@@ -1,8 +1,10 @@
-package com.priyanshnama.technical_fest;
+package com.priyanshnama.technical_fest.ui.profile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.priyanshnama.technical_fest.R;
 
 public class UpgradePassActivity extends AppCompatActivity {
 
