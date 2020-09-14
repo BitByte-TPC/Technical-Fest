@@ -1,119 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
     tools:context=".ui.options.ContactUsActivity">
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="0dp"
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="12dp"
         android:background="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_weight="5">
 
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:contentDescription="@string/contact_us"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/contact_us" />
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/card_margin"
+            android:contentDescription="@string/back"
+            android:src="@drawable/ic_left_arrow"/>
 
-    <ImageView
-        android:id="@+id/back"
-        android:layout_width="@dimen/icon_size"
-        android:layout_height="@dimen/icon_size"
-        android:layout_margin="@dimen/card_margin"
-        android:contentDescription="@string/back"
-        android:src="@drawable/ic_left_arrow"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/contact_us"
+            app:srcCompat="@drawable/contact_us" />
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/contact_us"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="@color/black"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:text="@string/contact_us"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/black"
+            android:textSize="32sp"/>
+
+    </FrameLayout>
 
     <EditText
         android:id="@+id/phone"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:layout_margin="12dp"
-        android:textColor="@color/black"
+        android:layout_weight="1"
         android:autofillHints="Phone"
         android:hint="@string/phone"
         android:inputType="phone"
-        app:layout_constraintBottom_toTopOf="@+id/subject"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:textColor="@color/black"/>
 
     <EditText
         android:id="@+id/subject"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_margin="12dp"
+        android:layout_weight="1"
+        android:autofillHints="Subject"
         android:hint="@string/subject"
         android:inputType="textPersonName"
-        android:padding="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/message"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:autofillHints="Subject" />
+        android:padding="12dp" />
 
     <EditText
         android:id="@+id/message"
-        android:layout_width="0dp"
-        android:layout_height="170dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_margin="12dp"
+        android:layout_weight="3"
         android:autofillHints="Message"
         android:hint="@string/message"
         android:inputType="textMultiLine"
-        android:padding="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/send"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:padding="12dp" />
 
     <ImageButton
         android:id="@+id/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:src="@drawable/ic_send"
         android:background="@null"
-        app:layout_constraintBottom_toTopOf="@+id/social"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:contentDescription="@string/send" />
+        android:layout_margin="@dimen/card_margin"
+        android:layout_gravity="bottom|center_horizontal"
+        android:contentDescription="@string/send"
+        android:src="@drawable/ic_send" />
 
     <LinearLayout
-        android:id="@+id/social"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@null"
         android:orientation="horizontal"
-        android:weightSum="3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:weightSum="3">
 
         <ImageButton
             android:id="@+id/facebook"
@@ -121,7 +98,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@null"
-            android:padding="12dp"
+            android:padding="@dimen/card_margin"
             android:src="@drawable/ic_facebook"
             android:contentDescription="@string/facebook_logo" />
 
@@ -131,7 +108,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@null"
-            android:padding="12dp"
+            android:padding="@dimen/card_margin"
             android:src="@drawable/ic_instagram"
             android:contentDescription="@string/instagram_logo" />
 
@@ -141,10 +118,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@null"
-            android:padding="12dp"
+            android:padding="@dimen/card_margin"
             android:src="@drawable/ic_web"
             android:contentDescription="@string/website_logo" />
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
