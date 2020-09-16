@@ -109,7 +109,7 @@ public class EventInfoActivity extends AppCompatActivity {
                         Picasso.get().load(Objects.requireNonNull(data.get("image")).toString()).into(image);
                         phone = Objects.requireNonNull(data.get("phone")).toString();
                         emailId = Objects.requireNonNull(data.get("email")).toString();
-                        rules.setText(Objects.requireNonNull(data.get("rules")).toString());
+                        rules.setText(StringFormatter.format(Objects.requireNonNull(data.get("rules")).toString()));
                         desc.setText(Objects.requireNonNull(data.get("desc")).toString());
                         date.setText(Objects.requireNonNull(data.get("date")).toString());
                         time.setText(Objects.requireNonNull(data.get("time")).toString());
