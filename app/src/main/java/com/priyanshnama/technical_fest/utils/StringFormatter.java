@@ -1,4 +1,4 @@
-package com.priyanshnama.technical_fest.ui.events;
+package com.priyanshnama.technical_fest.utils;
 
 import androidx.annotation.NonNull;
 

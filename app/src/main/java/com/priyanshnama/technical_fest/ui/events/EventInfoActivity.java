@@ -17,6 +17,7 @@ import androidx.core.content.ContextCompat;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.priyanshnama.technical_fest.R;
+import com.priyanshnama.technical_fest.utils.StringFormatter;
 import com.squareup.picasso.Picasso;
 
 import java.util.Map;
