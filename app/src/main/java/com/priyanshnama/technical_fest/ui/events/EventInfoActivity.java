@@ -14,6 +14,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.priyanshnama.technical_fest.R;
@@ -24,7 +26,8 @@ import java.util.Map;
 import java.util.Objects;
 
 public class EventInfoActivity extends AppCompatActivity {
-    private TextView desc, prize, person, date, time, venue, rules;
+    private TextView desc, prize, person, date, time, venue;
+    private RecyclerView rules;
     private ImageView image;
     private String emailId, phone, event_name;
     private View event_info;
@@ -48,6 +51,7 @@ public class EventInfoActivity extends AppCompatActivity {
         time = findViewById(R.id.time);
         venue = findViewById(R.id.venue);
         rules = findViewById(R.id.rules);
+        rules.setLayoutManager(new LinearLayoutManager(this));
         rules_layout = findViewById(R.id.rules_layout);
 
         findViewById(R.id.back).setOnClickListener(this::back);
@@ -110,7 +114,8 @@ public class EventInfoActivity extends AppCompatActivity {
                         Picasso.get().load(Objects.requireNonNull(data.get("image")).toString()).into(image);
                         phone = Objects.requireNonNull(data.get("phone")).toString();
                         emailId = Objects.requireNonNull(data.get("email")).toString();
-                        rules.setText(StringFormatter.format(Objects.requireNonNull(data.get("rules")).toString()));
+                        //rules.setText(RulesRCVCreator.format(Objects.requireNonNull(data.get("rules")).toString()));
+                        new RulesRCVCreator(rules, Objects.requireNonNull(data.get("rules")).toString()).create();
                         desc.setText(Objects.requireNonNull(data.get("desc")).toString());
                         date.setText(Objects.requireNonNull(data.get("date")).toString());
                         time.setText(Objects.requireNonNull(data.get("time")).toString());
