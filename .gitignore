@@ -6,6 +6,7 @@
 /captures
 .externalNativeBuild
 .cxx
+services.tar
 
 # Built application files
 *.apk
