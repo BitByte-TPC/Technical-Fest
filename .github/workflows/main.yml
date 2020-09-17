@@ -21,7 +21,7 @@ jobs:
     - name: Dencrypt tar.gpg
       run: |
         mkdir $HOME/private
-        gpg --quiet --batch --yes --decrypt --passphrase="${{ FIREBASE_SECRET }}" \
+        gpg --quiet --batch --yes --decrypt --passphrase="${{ secret.FIREBASE_SECRET }}" \
                 --output $HOME/private/services.tar services.tar.gpg
         tar xvf $HOME/private/services.tar
     - name: Build with Gradle
